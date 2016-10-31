@@ -9,7 +9,9 @@
 <script src="/lib/core.js"></script>
 <script src="/lib/charts.js"></script>
 <script src="/lib/log.js"></script>
-<script src="/lib/jquery.flot.time.js"></script>"
+<script src="/lib/jqcloud-1.0.4.js"></script>
+<script src="/lib/wordcloud.js"></script>
+<script src="/lib/tweets.js"></script>
 </head>
 <body class="container_12">
 <h1>ECA Dashboard Template</h1>
@@ -42,7 +44,7 @@ The <code>@event</code> part tells the system to fire the action whenever the ev
 
 </div>
 <div id="graph" class="grid_8 vert_4"></div>
-
+<div id="wolk" class="grid_8 vert_5"></div>
 <script>
 // create a rolling chart block
 block('#graph').rolling_chart({
@@ -60,6 +62,13 @@ block('#graph').rolling_chart({
 
 // connect sample event to graph
 events.connect('tweetcount', '#graph');
+block('#wolk').wordcloud({
+    filter_function: function(cat, val, max) {
+        return val >= 3; // do not display words seen less than 3 times
+    }
+});
+events.connect('word', '#wolk');
+events.connect('word', '#wolk');
 </script>
 </body>
 </html>
