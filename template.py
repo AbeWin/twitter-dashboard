@@ -37,6 +37,6 @@ def tweet(ctx, e):
     # Create an array of words in the tweet without punctuation
     tweetdatawords = tweetdata['text'].translate(str.maketrans({key: ' ' for key in string.punctuation})).split()
     # Remove common words
-    toremove = ['ja', 'dat', 'de', 'en', 'uh', 'ik', 'een', 'is', 'die', 'van', 't', 'maar', 'in', 'niet', 'je', 'zijn', 'hebben', 'dan', 'door', 'aan', 'voor']
+    toremove = ['ja', 'dat', 'de','goed','voor','jij','niet','ook','veel','geen','beetje','oke','ok','nee','en', 'uh', 'ik', 'een', 'is', 'die', 'van', 't', 'maar', 'in', 'niet', 'je', 'zijn', 'hebben', 'dan', 'door', 'aan', 'voor']
     tweetdatawords2 = [x for x in tweetdatawords if x not in toremove]
     print(tweetdatawords2)
