@@ -9,6 +9,7 @@
 <script src="/lib/core.js"></script>
 <script src="/lib/charts.js"></script>
 <script src="/lib/log.js"></script>
+<script src="/lib/jquery.flot.time.js"></script>"
 </head>
 <body class="container_12">
 <h1>ECA Dashboard Template</h1>
@@ -45,7 +46,7 @@ The <code>@event</code> part tells the system to fire the action whenever the ev
 <script>
 // create a rolling chart block
 block('#graph').rolling_chart({
-    memory: 150,
+    memory: 7,
     chart: {
         yaxis: {
             min: -100,
@@ -58,7 +59,7 @@ block('#graph').rolling_chart({
 });
 
 // connect sample event to graph
-events.connect('sample', '#graph');
+events.connect('tweetcount', '#graph');
 </script>
 </body>
 </html>
