@@ -13,7 +13,18 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
-        <link rel="stylesheet" href="style.css">
+        <!-- Our own stylesheet -->
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!-- flot files jquery -->
+        <script src="jquery/flot.js"></script>
+        <link rel="stylesheet" href="/style/layout.css"/>
+        <link rel="stylesheet" href="/style/theme.css"/>
+        <script src="/lib/jquery-2.1.1.min.js"></script>
+        <script src="/lib/jquery.flot.min.js"></script>
+        <script src="/lib/core.js"></script>
+        <script src="/lib/charts.js"></script>
+        
     </head>
     <body>
         <div class="container-fluid">
@@ -21,7 +32,9 @@
                 <div class="col-md-3">
                     <div class="row">
                         <div class="col-md-12">
-                            <div><h3>Tweetometer</h3></div>
+                            <div>
+                                <h3>Tweetometer</h3>
+                            </div>
                         </div>
                     </div>
                     <div class="row">
@@ -38,7 +51,11 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12">
-                            <div><h3>Tweetcounter</h3></div>
+                            <div>
+                            <h3>Tweetcounter</h3>
+                            <!----- GRAPH ------>
+                            <div style="height:300px;" id="tweetcounter"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,4 +74,7 @@
             </div>
         </div>
     </body>
+    <script>
+        events.connect('tweetcount', '#graph0');
+    </script>
 </html>
