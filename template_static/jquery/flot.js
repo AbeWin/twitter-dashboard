@@ -1,4 +1,6 @@
 $(document).ready(function(){
+    var map;
+    map = new google.maps.Map(document.getElementById('map'), {zoom: 12, center: {lat: 51.99780 lng: 6.44820}, mapTypeId: 'roadmap')
     block('#tweetcounter').rolling_chart({
         memory: 75,
         series: {
@@ -31,5 +33,5 @@ $(document).ready(function(){
     block('#populartweet').tweets({
     memory: 20
     });
-    
 });
+    
