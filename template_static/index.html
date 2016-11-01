@@ -18,12 +18,17 @@
         
         <!-- flot files jquery -->
         <script src="jquery/flot.js"></script>
-        <link rel="stylesheet" href="/style/layout.css"/>
-        <link rel="stylesheet" href="/style/theme.css"/>
-        <script src="/lib/jquery-2.1.1.min.js"></script>
-        <script src="/lib/jquery.flot.min.js"></script>
-        <script src="/lib/core.js"></script>
-        <script src="/lib/charts.js"></script>
+        <link rel="stylesheet" href="style/layout.css"/>
+        <link rel="stylesheet" href="style/theme.css"/>
+        <script src="lib/jquery-2.1.1.min.js"></script>
+        <script src="lib/jquery.flot.min.js"></script>
+        <script src="lib/core.js"></script>
+        <script src="lib/charts.js"></script>
+        <link rel="stylesheet" href="/style/wordcloud.css"/>
+        <script src="/lib/log.js"></script>
+        <script src="/lib/jqcloud-1.0.4.js"></script>
+        <script src="/lib/wordcloud.js"></script>
+        <script src="/lib/tweets.js"></script>
     </head>
     <body>
         <div class="container-fluid">
@@ -33,9 +38,11 @@
                     <h1>Drerries batadash</h1>
                 </div>
                 <div class="col-md-4">
-                    <audio controls="controls">
-                        <source src="http://bata-radio.snt.utwente.nl/high.mp3" type="audio/mpeg">
-                    </audio>
+                    <div style="text-align: center;">
+                        <audio controls="controls">
+                            <source src="http://bata-radio.snt.utwente.nl/high.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -51,6 +58,8 @@
                         <div class="col-md-12">
                             <div id="blok">
                                 <h3>Wordcloud</h3>
+                                <!----- GRAPH ------>
+                                <div style="height:300px;" id="wolk"></div>
                             </div>
                         </div>
                     </div>
@@ -94,5 +103,6 @@
     </body>
     <script>
         events.connect('tweetcount', '#tweetcounter');
+        events.connect('word', '#wolk');
     </script>
 </html>
