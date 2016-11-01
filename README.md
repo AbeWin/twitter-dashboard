@@ -1,2 +1,2 @@
 # twitter-dashboard
-Even een test met de hoop dat ik de master niet verkloot
+A twitter dashboard to analyse twitter behaviour during and concerning the Batavierenrace.

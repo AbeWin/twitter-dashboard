@@ -28,12 +28,22 @@ def checktime(ctx, e):
     emit('tweetcount',{'action': 'add', 'value': tweet_count})
     tweet_count=0
     fire('timer', delay=1)
+def updateWordCloud(tweetdata):
+    hashtags = tweetdata['entities']['hashtags']
+    for i in range(len(hashtags)):
+        emit('word', {'action': 'add', 'value': [hashtags[i]["text"], 1]})
+def updateMap(tweetdata):
+    if 'coordinates' in tweetdata:
+        long = 
+    return True
+
 #tweet event
 @event('chirp')
 def tweet(ctx, e):
     global tweet_count
     tweet_count = tweet_count + 1
     tweetdata = e.data
-    hashtags = tweetdata['entities']['hashtags']
-    for i in range(len(hashtags)):
-        emit('word', {'action': 'add', 'value': [hashtags[i]["text"], 1]})
+    updateWordCloud(tweetdata)
+    updatePopular(tweetdata)
+    updateMap(tweetdata)
+    emit('tweet', tweetdata)
