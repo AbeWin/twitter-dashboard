@@ -25,4 +25,11 @@ $(document).ready(function(){
             return Math.round(Math.pow(val, (1/Math.log10(max))))
         }
     });
+    block('#tweet').tweets({
+    memory: 20
+    });
+    block('#populartweet').tweets({
+    memory: 20
+    });
+    
 });
