@@ -34,9 +34,6 @@ def tweet(ctx, e):
     global tweet_count
     tweet_count = tweet_count + 1
     tweetdata = e.data
-    # Create an array of words in the tweet without punctuation
-    tweetdatawords = tweetdata['text'].translate(str.maketrans({key: ' ' for key in string.punctuation})).split()
-    # Remove common words
-    toremove = ['ja', 'dat', 'de','goed','voor','jij','niet','ook','veel','geen','beetje','oke','ok','nee','en', 'uh', 'ik', 'een', 'is', 'die', 'van', 't', 'maar', 'in', 'niet', 'je', 'zijn', 'hebben', 'dan', 'door', 'aan', 'voor']
-    tweetdatawords2 = [x for x in tweetdatawords if x not in toremove]
-    print(tweetdatawords2)
+    hashtags = tweetdata['entities']['hashtags']
+    for i in range(len(hashtags)):
+        emit('word', {'action': 'add', 'value': [hashtags[i]["text"], 1]})
