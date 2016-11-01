@@ -3,10 +3,11 @@ from eca.generators import start_offline_tweets
 import textwrap
 import json
 from time import time
+import string
 
 ## You might have to update the root path to point to the correct path
 ## (by default, it points to <rules>_static)
-# root_content_path = 'template_static'
+#root_content_path = 'template_static'
 
 
 # binds the 'setup' function as the action for the 'init' event
@@ -32,3 +33,10 @@ def checktime(ctx, e):
 def tweet(ctx, e):
     global tweet_count
     tweet_count = tweet_count + 1
+    tweetdata = e.data
+    # Create an array of words in the tweet without punctuation
+    tweetdatawords = tweetdata['text'].translate(str.maketrans({key: ' ' for key in string.punctuation})).split()
+    # Remove common words
+    toremove = ['ja', 'dat', 'de','goed','voor','jij','niet','ook','veel','geen','beetje','oke','ok','nee','en', 'uh', 'ik', 'een', 'is', 'die', 'van', 't', 'maar', 'in', 'niet', 'je', 'zijn', 'hebben', 'dan', 'door', 'aan', 'voor']
+    tweetdatawords2 = [x for x in tweetdatawords if x not in toremove]
+    print(tweetdatawords2)
