@@ -23,3 +23,11 @@ audio:hover {
 h3, h1 {
     text-align: center;
 }
+
+#blok   {
+     border: 3px solid rgba(255, 255, 255, .1);
+}
+
+#blok:hover {
+    border: 3px solid rgba(255, 255, 255, .6);
+}
