@@ -1,6 +1,4 @@
 $(document).ready(function(){
-    var map;
-    map = new google.maps.Map(document.getElementById('map'), {zoom: 12, center: {lat: 51.99780 lng: 6.44820}, mapTypeId: 'roadmap')
     block('#tweetcounter').rolling_chart({
         memory: 75,
         series: {
@@ -34,4 +32,52 @@ $(document).ready(function(){
     memory: 20
     });
 });
-    
+function initMap() {
+    var map;
+    map = new google.maps.Map(document.getElementById('map'), {zoom: 9, center: {lat: 51.99780, lng: 6.44820}, mapTypeId: 'roadmap'});
+}
+(function($, block) {
+
+block.fn.map = function(config) {
+    // handle configuration
+    var options = $.extend({
+        size: '64pt',
+        text: 'RED',
+        color: 'red'
+    }, config);
+
+    // create HTML representation
+    var $el = $('<span></span>').appendTo(this.$element);
+    $el.css('font-size', options.size);
+
+    // create HTML element for display
+    var data = {
+        text: options.text,
+        color: options.color
+    }
+
+    // update function to update element
+    var update = function() {
+        $el.text(data.text+'!').css('color', data.color);
+    }
+
+    // invoke update to initialise the display
+    update();
+
+    // register actions
+    this.actions({
+        word: function(e, message) {
+            data.text = message.text;
+            update();
+        },
+        color: function(e, message) {
+            data.color = message.color;
+            update();
+        }
+    });
+
+    // return the element for further work
+    return this.$element;
+}
+
+})(jQuery, block);
