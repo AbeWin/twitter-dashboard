@@ -80,7 +80,7 @@
                             <div id="blok">
                             <h3>Tweetcounter</h3>
                             <!----- GRAPH ------>
-                            <div style="height:300px;" id="tweetcounter"></div>
+                            <div style="height:200px;" id="tweetcounter"></div>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,8 @@
                         <div class="col-md-12">
                             <div id="blok">
                                 <h3>Popular tweets</h3>
-                                <div id="populartweet"></div>
+                                <!----- GRAPH ------>
+                                <div id="populartweetfeed"></div>
                             </div>
                         </div>
                     </div>
@@ -98,7 +99,8 @@
                         <div class="col-md-12">
                             <div id="blok">
                                 <h3>Live tweetfeed</h3>
-                                <div id="tweet"></div>
+                                <!----- GRAPH ------>
+                                <div style="height: 400px" id="tweetfeed"></div>
                             </div>
                         </div>
                     </div>
@@ -109,7 +111,7 @@
     <script>
         events.connect('tweetcount', '#tweetcounter');
         events.connect('word', '#wolk');
-        events.connect('tweet', '#tweet');
-        events.connect('populartweet', '#populartweet');
+        events.connect('tweet', '#tweetfeed');
+        events.connect('populartweet', '#populartweetfeed');
     </script>
 </html>
