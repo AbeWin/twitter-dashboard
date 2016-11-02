@@ -34,8 +34,7 @@ def updateWordCloud(tweetdata):
         emit('word', {'action': 'add', 'value': [hashtags[i]["text"], 1]})
 def updateMap(tweetdata):
     if 'coordinates' in tweetdata:
-        long = 
-    return True
+        emit('map', tweetdata['coordinates'])
 
 #tweet event
 @event('chirp')
@@ -44,6 +43,5 @@ def tweet(ctx, e):
     tweet_count = tweet_count + 1
     tweetdata = e.data
     updateWordCloud(tweetdata)
-    updatePopular(tweetdata)
     updateMap(tweetdata)
     emit('tweet', tweetdata)
