@@ -15,7 +15,7 @@
         
         <!-- Our own stylesheet -->
         <link rel="stylesheet" href="css/style.css">
-        
+        <link rel="stylesheet" href="css/sideNav.css">
         
         <!-- flot files jquery -->
         <script src="jquery/flot.js"></script>
@@ -41,21 +41,26 @@
     </head>
     <body>
         <div class="container-fluid">
+            
+            <!--- Sliding menu ----------->
+            <div id="Sidenav" class="Sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="http://drerries.com/members.html">Meet the team</a>
+                <span class="divider"></span>
+                <p>Bata Radio:</p>
+                <audio controls="controls">
+                    <source src="http://bata-radio.snt.utwente.nl/high.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            
             <div class="row">
                 <div class="col-md-4">
-                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" id="Butt"></span>
+                    <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true" id="Butt" onclick="openNav()"></span>
                 </div>
                 <div class="col-md-4">
                     <h1 class="title">MSG Batadash</h1>
                 </div>
-                <div class="col-md-4">
-                    <div style="text-align: center;">
-                        <h4 style="text-align:center; color:white;">Bataradio</h4>
-                        <audio controls="controls">
-                            <source src="http://bata-radio.snt.utwente.nl/high.mp3" type="audio/mpeg">
-                        </audio>
-                    </div>
-                </div>
+                <div class="col-md-4"></div>
             </div>
             <div class="row">
                 <div class="col-md-3">
