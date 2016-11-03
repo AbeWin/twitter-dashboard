@@ -29,8 +29,14 @@
         <script src="/lib/jqcloud-1.0.4.js"></script>
         <script src="/lib/wordcloud.js"></script>
         <script src="/lib/tweets.js"></script>
+        <!-- our own blocks -->
         <script src="/lib/map.js"></script>
-         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvDHc1NoXEabcgCW-D5alg3RPnl3dnZdw&callback=initMap"></script>
+        <script src="/lib/gauge.js"></script>
+        <!-- library for making the gauge -->
+        <script src="/lib/raphael-2.1.4.min.js"></script>
+        <script src="/lib/justgage.js"></script>
+        <!-- google maps api -->
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvDHc1NoXEabcgCW-D5alg3RPnl3dnZdw&callback=initMap"></script>
     </head>
     <body>
         <div class="container-fluid">
@@ -53,6 +59,7 @@
                         <div class="col-md-12">
                             <div id="blok">
                                 <h3>Tweetometer</h3>
+                                <div id="gauge"></div>
                             </div>
                         </div>
                     </div>
@@ -90,8 +97,7 @@
                         <div class="col-md-12">
                             <div id="blok">
                                 <h3>Popular tweets</h3>
-                                <!----- GRAPH ------>
-                                <div id="populartweetfeed"></div>
+                                <div id="populartweet"></div>
                             </div>
                         </div>
                     </div>
@@ -99,8 +105,7 @@
                         <div class="col-md-12">
                             <div id="blok">
                                 <h3>Live tweetfeed</h3>
-                                <!----- GRAPH ------>
-                                <div style="height: 400px" id="tweetfeed"></div>
+                                <div style="height:400px" id="tweet"></div>
                             </div>
                         </div>
                     </div>
@@ -111,8 +116,9 @@
     <script>
         events.connect('tweetcount', '#tweetcounter');
         events.connect('word', '#wolk');
-        events.connect('tweet', '#tweetfeed');
-        events.connect('populartweet', '#populartweetfeed');
-        events.connect('map', '#map');
+        events.connect('tweet', '#tweet');
+        events.connect('populartweet', '#populartweet');
+        events.connect('map', '#map')
+        events.connect('tweetcount', '#gauge');
     </script>
 </html>
