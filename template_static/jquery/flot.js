@@ -35,7 +35,7 @@ $(document).ready(function(){
     block('#map').map({});
     block('#gauge').gauge({});
     
-    $("#button").click(function(){
+    $("#Butt").click(function(){
         $("p").toggle();
     })
 });

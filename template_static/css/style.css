@@ -31,11 +31,10 @@ h3, h1 {
     background-color: rgba(255,255,255,.4);
 }
 
-span {
-    font-size: 2em;
-}
-
 .title {
     color: white;
     font-weight: 600;
+}
+#Butt {
+    font-size:2em
 }
