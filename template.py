@@ -1,9 +1,5 @@
 from eca import *
 from eca.generators import start_offline_tweets
-import textwrap
-import json
-from time import time
-import string
 
 ## You might have to update the root path to point to the correct path
 ## (by default, it points to <rules>_static)
@@ -35,7 +31,9 @@ def updateWordCloud(tweetdata):
 def updateMap(tweetdata):
     if tweetdata['coordinates'] != None:
         emit('map', {'action': 'add', 'values': [tweetdata['coordinates']['coordinates'], tweetdata["text"]]})
-
+def updateOfficialTweet(tweetdata):
+    if tweetdata['user']['id_str'] == "19373068":
+        emit('officialtweet', tweetdata)
 #tweet event
 @event('chirp')
 def tweet(ctx, e):
@@ -45,3 +43,4 @@ def tweet(ctx, e):
     updateWordCloud(tweetdata)
     updateMap(tweetdata)
     emit('tweet', tweetdata)
+    updateOfficialTweet(tweetdata)
