@@ -34,6 +34,10 @@ $(document).ready(function(){
     });
     block('#map').map({});
     block('#gauge').gauge({});
+    
+    $("#button").click(function(){
+        $("p").toggle();
+    })
 });
 var map;
 function initMap() {
