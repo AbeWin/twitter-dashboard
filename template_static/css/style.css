@@ -34,3 +34,8 @@ h3, h1 {
 span {
     font-size: 2em;
 }
+
+.title {
+    color: white;
+    font-weight: 600;
+}
