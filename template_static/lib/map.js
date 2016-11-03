@@ -8,12 +8,20 @@ block.fn.map = function(config) {
     this.actions({
         add: function(e, message) {
             // get the coordinates from the event
-            coords = message.value;
+            coords = message.values[0];
             var LngLat = new google.maps.LatLng(coords);
             // adding a marker to the map
             var marker = new google.maps.Marker({position: {lng: coords[0], lat: coords[1]}, map: map});
+			var secretMessage = message.values[1];
+			var infoWindow = new google.maps.InfoWindow({
+				content: secretMessage
+			});
+			marker.addListener('click', function() {
+				infoWindow.open(marker.get(map), marker);
+			});
         }
-    });
+		})
+    };
     return this.$element;
 }
-})(jQuery, block);
+)(jQuery, block);
