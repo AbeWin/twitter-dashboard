@@ -2,13 +2,12 @@ html    {
     height:100%;
 }
 body    {
-    position: relative;
-    margin-top:0px !important;
     background: #00D47E; /* For browsers that do not support gradients */
     background: -webkit-linear-gradient(135deg, #B1ADD9, #00D47E); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(135deg, #B1ADD9, #00D47E); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(135deg, #B1ADD9, #00D47E); /* For Firefox 3.6 to 15 */
     background: linear-gradient(135deg, #B1ADD9, #00D47E); /* Standard syntax (must be last) */
+    background-attachment:fixed;
 }
 
 audio   {
@@ -25,9 +24,13 @@ h3, h1 {
 }
 
 #blok   {
-     border: 3px solid rgba(255, 255, 255, .1);
+     background-color: rgba(255,255,255,.0);
 }
 
 #blok:hover {
-    border: 3px solid rgba(255, 255, 255, .6);
+    background-color: rgba(255,255,255,.4);
+}
+
+span {
+    font-size: 2em;
 }

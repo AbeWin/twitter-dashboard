@@ -2,7 +2,7 @@
 
 div.jqcloud {
   font-family: "Helvetica", "Arial", sans-serif;
-  font-size: 10px;
+  font-size: 15px;
   line-height: normal;
 }
 
@@ -10,17 +10,16 @@ div.jqcloud a {
   font-size: inherit;
   text-decoration: none;
 }
-/* I reduced all the percentages by a half (Jesse) */
-div.jqcloud span.w10 { font-size: 275%; }
-div.jqcloud span.w9 { font-size: 250%; }
-div.jqcloud span.w8 { font-size: 225%; }
-div.jqcloud span.w7 { font-size: 200%; }
-div.jqcloud span.w6 { font-size: 175%; }
-div.jqcloud span.w5 { font-size: 150%; }
-div.jqcloud span.w4 { font-size: 125%; }
-div.jqcloud span.w3 { font-size: 100%; }
-div.jqcloud span.w2 { font-size: 75%; }
-div.jqcloud span.w1 { font-size: 50%; }
+div.jqcloud span.w10 { font-size: 400%; }
+div.jqcloud span.w9 { font-size: 360%; }
+div.jqcloud span.w8 { font-size: 338%; }
+div.jqcloud span.w7 { font-size: 300%; }
+div.jqcloud span.w6 { font-size: 263%; }
+div.jqcloud span.w5 { font-size: 225%; }
+div.jqcloud span.w4 { font-size: 188%; }
+div.jqcloud span.w3 { font-size: 150%; }
+div.jqcloud span.w2 { font-size: 113%; }
+div.jqcloud span.w1 { font-size: 75%; }
 
 /* colors */
 
