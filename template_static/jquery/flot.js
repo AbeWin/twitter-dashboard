@@ -29,8 +29,8 @@ $(document).ready(function(){
     block('#tweet').tweets({
     memory: 5
     });
-    block('#populartweet').tweets({
-    memory: 3
+    block('#officialtweet').tweets({
+    memory: 5
     });
     block('#map').map({});
     block('#gauge').gauge({});
