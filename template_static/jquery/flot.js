@@ -30,7 +30,7 @@ $(document).ready(function(){
     memory: 5
     });
     block('#officialtweet').tweets({
-    memory: 5
+    memory: 3
     });
     block('#map').map({});
     block('#gauge').gauge({});
