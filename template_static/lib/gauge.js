@@ -4,7 +4,7 @@ block.fn.gauge = function(config) {
     // handle configuration (no configuration needed for our purpose)
     var options = $.extend({
     }, config);
-    // register action add to add a marker
+    //Feed tweetcount data to gauge
     this.actions({
         add: function(e, message) {
             val = message.value
