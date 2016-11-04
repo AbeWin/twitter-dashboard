@@ -68,12 +68,3 @@ function initGauge() {
         counter: true
         });
     };
-
-//functions for our sliding nav:
-function openNav() {
-    document.getElementById("Sidenav").style.width = "350px";
-}
-
-function closeNav() {
-    document.getElementById("Sidenav").style.width = "0";
-}
