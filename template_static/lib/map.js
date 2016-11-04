@@ -9,18 +9,19 @@ block.fn.map = function(config) {
         add: function(e, message) {
             // get the coordinates from the event
             coords = message.values[0];
-            var LngLat = new google.maps.LatLng(coords);
-            // adding a marker to the map
+            // adding a marker to the map, map is defined in file initBlocks.js
             var marker = new google.maps.Marker({position: {lng: coords[0], lat: coords[1]}, map: map});
-			var secretMessage = message.values[1];
-			var infoWindow = new google.maps.InfoWindow({
-				content: secretMessage
-			});
-			marker.addListener('click', function() {
-				infoWindow.open(marker.get(map), marker);
-			});
+	    // create secret message and add to map
+	    var secretMessage = message.values[1];
+	    var infoWindow = new google.maps.InfoWindow({
+		content: secretMessage
+	    });
+	    //Add listener for event click to display secret message
+	    marker.addListener('click', function() {
+		infoWindow.open(marker.get(map), marker);
+	    });
         }
-		})
+	})
     };
     return this.$element;
 }
