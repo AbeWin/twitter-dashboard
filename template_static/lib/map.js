@@ -9,7 +9,7 @@ block.fn.map = function(config) {
         add: function(e, message) {
             // get the coordinates from the event
             coords = message.values[0];
-            // adding a marker to the map, map is defined in file initBlocks.js
+            // adding a marker to the map, map is defined in file flot.js
             var marker = new google.maps.Marker({position: {lng: coords[0], lat: coords[1]}, map: map});
 	    // create secret message and add to map
 	    var secretMessage = message.values[1];
