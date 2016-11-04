@@ -45,8 +45,6 @@
             <!--- Sliding menu ----------->
             <div id="Sidenav" class="Sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <!--<a href="http://drerries.com/members.html">Meet the team</a>
-                <span class="divider"></span>-->
                 <p>Bata Radio:</p>
                 <audio controls="controls">
                     <source src="http://bata-radio.snt.utwente.nl/high.mp3" type="audio/mpeg">
@@ -95,7 +93,6 @@
                         <div class="col-md-12">
                             <div id="blok">
                             <h3 class="title">Tweetcounter</h3>
-                            <!----- GRAPH ------>
                             <div style="height:200px;" id="tweetcounter"></div>
                             </div>
                         </div>
@@ -123,6 +120,7 @@
         </div>
     </body>
     <script>
+        //connect events to the blocks
         events.connect('tweetcount', '#tweetcounter');
         events.connect('word', '#wolk');
         events.connect('tweet', '#tweet');
